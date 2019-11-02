@@ -4,4 +4,156 @@
 <li>正则表达式语法</li>
 </ul>
 <h2 id="1-什么是正则表达式"><a href="#1-什么是正则表达式" class="headerlink" title="1.什么是正则表达式"></a>1.什么是正则表达式</h2><p><strong>正则表达式</strong>（Regular Expression），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配符合某个句法规则的字符串。在很多文本编译器中，正则表达式常用来检索、替换匹配的文字。</p>
-<h2 id="2-正则表达式语法"><a href="#2-正则表达式语法" class="headerlink" title="2.正则表达式语法"></a>2.正则表达式语法</h2><h3 id="2-1修饰符"><a href="#2-1修饰符" class="headerlink" title="2.1修饰符"></a>2.1修饰符</h3></div><div class="tags"><a href="/MercuryBlogs/tags/常用/">常用</a></div><div class="post-nav"><a class="pre" href="/MercuryBlogs/2019/09/24/cssInterview/">css面试题</a><a class="next" href="/MercuryBlogs/2019/09/21/cssBox/">css盒模型</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://thundergogogo.github.io/MercuryBlogs"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/必备工具/">必备工具</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/MercuryBlogs/tags/新特性/" style="font-size: 15px;">新特性</a> <a href="/MercuryBlogs/tags/面试题/" style="font-size: 15px;">面试题</a> <a href="/MercuryBlogs/tags/css基础/" style="font-size: 15px;">css基础</a> <a href="/MercuryBlogs/tags/常用/" style="font-size: 15px;">常用</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/jsInterview/">js面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/h5Attribute/">HTML5自定义属性</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/htmlInterview/">HTML面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/cssInterview/">css面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/23/reg/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/21/cssBox/">css盒模型</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/MercuryBlogs/." rel="nofollow">Mercury's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/MercuryBlogs/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/MercuryBlogs/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/MercuryBlogs/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/MercuryBlogs/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<h2 id="2-正则表达式语法"><a href="#2-正则表达式语法" class="headerlink" title="2.正则表达式语法"></a>2.正则表达式语法</h2><h3 id="2-1修饰符"><a href="#2-1修饰符" class="headerlink" title="2.1修饰符"></a>2.1修饰符</h3><ul>
+<li>g：global 执行一个全局匹配</li>
+<li>i：ignore case 忽略大小写</li>
+<li>m：multiple line 多行匹配</li>
+</ul>
+<p><strong>有g和没有g的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg1 = <span class="regexp">/\bgood\b/</span>;</span><br><span class="line"><span class="keyword">const</span> reg2 = <span class="regexp">/\bgood\b/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log((<span class="string">'today is good,tomorrow will good'</span>).replace(reg1,<span class="string">'😊'</span>));</span><br><span class="line"><span class="built_in">console</span>.log((<span class="string">'today is good,tomorrow will good'</span>).replace(reg2,<span class="string">'😊'</span>));</span><br></pre></td></tr></table></figure>
+
+<p>打印台结果，可以清晰的看出，默认不加g的匹配到第一个就停止，加了g就会匹配该字符串内所有符合的字段。</p>
+<p><img src="http://47.101.189.79/blogImgs/reg1.png" alt></p>
+<p><strong>有i和没有i的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg3 = <span class="regexp">/\bgood\b/g</span>;</span><br><span class="line"><span class="keyword">const</span> reg4 = <span class="regexp">/\bgood\b/gi</span>;</span><br><span class="line"><span class="built_in">console</span>.log((<span class="string">'today is Good,tomorrow will good'</span>).replace(reg3,<span class="string">'😀'</span>));</span><br><span class="line"><span class="built_in">console</span>.log((<span class="string">'today is good,tomorrow will good'</span>).replace(reg4,<span class="string">'😀'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>看如下结果，加了i的就会忽略大小写，匹配符合的字段</p>
+<p><img src="http://47.101.189.79/blogImgs/reg2.png" alt></p>
+<p><strong>有m和没有m的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg5 = <span class="regexp">/^abc/g</span>;</span><br><span class="line"><span class="keyword">const</span> reg6 = <span class="regexp">/^abc/gm</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"abcggab\nabcoab"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg5));   <span class="comment">//["abc"]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg6));   <span class="comment">//["abc","abc"]</span></span><br></pre></td></tr></table></figure>
+
+<p>检测字段存在换行\n且开始有^或有结束$，和g一起全局匹配，g只匹配第一行，加上m后就可以匹配后面的行。</p>
+<h3 id="2-2元字符"><a href="#2-2元字符" class="headerlink" title="2.2元字符"></a>2.2元字符</h3><p>元字符 (* + ? $ ^ . | \ ( ) { } [ ])</p>
+<h3 id="2-3字符类"><a href="#2-3字符类" class="headerlink" title="2.3字符类[]"></a>2.3字符类[]</h3><p>手机号正则的栗子：<strong>/^1[3456789]\d{9}$/</strong>，[3456789]表示3456789中任意一个数字都可。</p>
+<h3 id="2-4字符类取反"><a href="#2-4字符类取反" class="headerlink" title="2.4字符类取反[^]"></a>2.4字符类取反[^]</h3><p>还是手机号正则的栗子：<strong>/^1[^012]\d{9}$/</strong>，[^012]表示除了这三个其它数字都可以。</p>
+<h3 id="2-5范围类"><a href="#2-5范围类" class="headerlink" title="2.5范围类[-]"></a>2.5范围类[-]</h3><p>设置范围如：<strong>[a-z]</strong>、<strong>[0-9]</strong>，可以连写<strong>[a-z0-9]</strong></p>
+<h3 id="2-6预定义类"><a href="#2-6预定义类" class="headerlink" title="2.6预定义类"></a>2.6预定义类</h3><p>目的：方便书写</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>等价类</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>[^\n\r]</td>
+<td>匹配除了回车和换行符外的所有字符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>[0-9]</td>
+<td>匹配数字字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>[^0-9]</td>
+<td>匹配除了数字字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>[a-zA-Z_0-9]</td>
+<td>匹配单词字符（数字、单词、下划线）</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>[^a-zA-Z_0-9]</td>
+<td>匹配非单词字符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>[\t\n\x08\f\r]</td>
+<td>匹配空白符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>[^\t\n\x08\f\r]</td>
+<td>匹配非空白符</td>
+</tr>
+</tbody></table>
+<p>有了这些预定义类，会更加方便我们书写正则表达式。</p>
+<h3 id="2-7边界"><a href="#2-7边界" class="headerlink" title="2.7边界"></a>2.7边界</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>匹配开始字符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配结束字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>单词边界，栗子：/\bis\b/匹配is单词</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>非单词边界</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前一位字符开始0次或多次，例如12*能匹配1和123，等价于{0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前一位字符开始1次或多次，例如12+能匹配12和123，但是不能匹配1，等价{1,}</td>
+</tr>
+</tbody></table>
+<p>\b与\B的使用方式与区别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg10 = <span class="regexp">/\bdog/g</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'dog&amp;dog&amp;dogdog&amp;'</span>.replace(reg10,<span class="string">'🐶'</span>))</span><br><span class="line"><span class="keyword">const</span> reg11 = <span class="regexp">/\Bdog/g</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'dog&amp;dog&amp;dogdog&amp;'</span>.replace(reg11,<span class="string">'🐶'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>打印结果👇</p>
+<p><img src="http://47.101.189.79/blogImgs/reg3.png" alt></p>
+<h3 id="2-8量词"><a href="#2-8量词" class="headerlink" title="2.8量词"></a>2.8量词</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?</td>
+<td>出现0次或1次</td>
+</tr>
+<tr>
+<td>*</td>
+<td>出现0次或任意次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>出现1次或任意次（至少1次）</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>出现0次或n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>至少n次，最多m次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>至少出现n次（+的升级版）</td>
+</tr>
+<tr>
+<td>{0,n}</td>
+<td>最多出现n次</td>
+</tr>
+</tbody></table>
+<p>如果没有量词，若要匹配4位数字，这样写/\d\d\d\d/，如果要匹配100位，这样写就不行了，有了量词，就可以简写成<strong>/\d{4}/</strong></p>
+<h3 id="2-9贪婪与非贪婪（懒惰）"><a href="#2-9贪婪与非贪婪（懒惰）" class="headerlink" title="2.9贪婪与非贪婪（懒惰）"></a>2.9贪婪与非贪婪（懒惰）</h3><p>正则表达式会默认为贪婪模式，何谓贪婪模式：就是仅可能多的匹配</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/\d&#123;3,6&#125;/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'123456789'</span>.replace(reg,<span class="string">'🐶'</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://47.101.189.79/blogImgs/reg4.png" alt></p>
+<p>可以看到，在贪婪模式下，匹配了最多的情况。</p>
+<p>那么如何进入懒惰模式：在量词后面加<strong>?</strong>问号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/\d&#123;3,6&#125;?/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'123456789'</span>.replace(reg,<span class="string">'🐶'</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://47.101.189.79/blogImgs/reg5.png" alt></p>
+<h3 id="2-10分组与反向引用"><a href="#2-10分组与反向引用" class="headerlink" title="2.10分组与反向引用"></a>2.10分组与反向引用</h3></div><div class="tags"><a href="/MercuryBlogs/tags/常用/">常用</a></div><div class="post-nav"><a class="pre" href="/MercuryBlogs/2019/09/24/cssInterview/">css面试题</a><a class="next" href="/MercuryBlogs/2019/09/21/cssBox/">css盒模型</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://thundergogogo.github.io/MercuryBlogs"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/MercuryBlogs/categories/必备工具/">必备工具</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/MercuryBlogs/tags/面试题/" style="font-size: 15px;">面试题</a> <a href="/MercuryBlogs/tags/css基础/" style="font-size: 15px;">css基础</a> <a href="/MercuryBlogs/tags/vue基础/" style="font-size: 15px;">vue基础</a> <a href="/MercuryBlogs/tags/新特性/" style="font-size: 15px;">新特性</a> <a href="/MercuryBlogs/tags/常用/" style="font-size: 15px;">常用</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/11/02/vue-basis1/">重学vue2.0-内部指令</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/jsInterview/">js面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/h5Attribute/">HTML5自定义属性</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/htmlInterview/">HTML面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/24/cssInterview/">css面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/23/reg/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/MercuryBlogs/2019/09/21/cssBox/">css盒模型</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/MercuryBlogs/." rel="nofollow">Mercury's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/MercuryBlogs/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/MercuryBlogs/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/MercuryBlogs/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/MercuryBlogs/js/smartresize.js?v=0.0.0"></script></div></body></html>
